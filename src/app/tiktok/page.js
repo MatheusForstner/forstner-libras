@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import { CardPost } from "@/components/CardPost";
 import styles from './page.module.css';
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import dados from "@/db.json"; // <=== importa o JSON direto!
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -22,19 +23,7 @@ export default function Home() {
   const nextPage = pageParam < totalPages ? pageParam + 1 : null;
 
   useEffect(() => {
-    async function fetchAllPosts() {
-      const response = await fetch("http://localhost:3042/posts", {
-        cache: 'no-store'
-      });
-      if (!response.ok) {
-        console.error("Erro ao buscar posts");
-        return;
-      }
-      const data = await response.json();
-      setPosts(data);
-    }
-
-    fetchAllPosts();
+    setPosts(dados.posts); // usa diretamente os dados do JSON importado
   }, []);
 
   return (
@@ -45,7 +34,7 @@ export default function Home() {
 
       <div className={styles.links}>
         {prevPage ? (
-          <button onClick={() => router.push(`tiktok/?page=${prevPage}`)} className={styles.link}>
+          <button onClick={() => router.push(`?page=${prevPage}`)} className={styles.link}>
             ← Página anterior
           </button>
         ) : (
@@ -53,7 +42,7 @@ export default function Home() {
         )}
 
         {nextPage ? (
-          <button onClick={() => router.push(`tiktok/?page=${nextPage}`)} className={styles.link}>
+          <button onClick={() => router.push(`?page=${nextPage}`)} className={styles.link}>
             Próxima página →
           </button>
         ) : (
