@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./loader.css";
 
+
 const BookSVG = () => (
   <svg
     className="loader__icon"
