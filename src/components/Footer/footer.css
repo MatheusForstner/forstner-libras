@@ -1,0 +1,120 @@
+:root {
+  --footer-bg-dark: #0b0c10;
+  --footer-bg-light: #f5f5f5;
+  --footer-text-dark: #f0f0f0;
+  --footer-text-light: #111111;
+
+  --footer-link-hover: #00b894;
+  --footer-border-light: #e0e0e0;
+  --footer-border-dark: #1f1f1f;
+}
+
+/* ===== BASE FOOTER ===== */
+.site-footer {
+  background-color: var(--footer-bg-dark);
+  color: var(--footer-text-dark);
+  padding: 50px 30px 25px;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  border-top: 1px solid var(--footer-border-dark);
+}
+
+:root.light .site-footer {
+  background-color: var(--footer-bg-light);
+  color: var(--footer-text-light);
+  border-top: 1px solid var(--footer-border-light);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+:root.light .footer-content {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--footer-text-dark);
+}
+
+:root.light .footer-logo {
+  color: var(--footer-text-light);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--footer-link-hover);
+}
+
+.footer-social {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-social a {
+  color: inherit;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: var(--footer-link-hover);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 25px;
+  opacity: 0.7;
+  color: inherit;
+}
+
+.footer-social a i {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
