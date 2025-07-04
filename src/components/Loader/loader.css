@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.loader {
+  --size: 52px;
+  position: fixed;
+  inset: 0;
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 2.6rem;
+  letter-spacing: 0.15em;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Text slide-in from left */
+.loader__text {
+  animation: slideInLeft 1s ease forwards;
+}
+
+/* SVG book icon animation like plane in original */
+.loader__icon {
+  width: var(--size);
+  height: var(--size);
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: draw 2.5s forwards ease-in-out, float 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
