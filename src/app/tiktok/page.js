@@ -1,6 +1,6 @@
 "use client"
 
-import { CardPost } from "@/components/CardPost";
+import { CardPost } from "../../components/CardPost";
 import styles from './page.module.css';
 import Link from "next/link";
 import { useState, useEffect } from "react";
