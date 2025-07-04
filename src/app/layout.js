@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { Prompt } from 'next/font/google'
-import { Header } from '../components/header/header'
-import { Footer } from "../components/Footer/Footer";
+import Header from '../components/header/header'
+import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/loader";
 
 import './globals.css'
