@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import dados from "@/db.json"; // <=== importa o JSON direto!
+import dados from "@/db.json"; 
 
 export default function Home() {
   const searchParams = useSearchParams();
