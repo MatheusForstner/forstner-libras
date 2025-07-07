@@ -2,13 +2,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Header from "../components/header/Header";
+import Header from "../components/header/header";
 import Footer from "../components/Footer/footer";
 import Loader from "../components/Loader/loader";
-
-console.log("Header:", Header);
-console.log("Footer:", Footer);
-console.log("Loader:", Loader);
 
 export default function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
