@@ -6,6 +6,9 @@ import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import Loader from "../components/Loader/loader";
 
+console.log("Header:", Header);
+console.log("Footer:", Footer);
+console.log("Loader:", Loader);
 
 export default function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
