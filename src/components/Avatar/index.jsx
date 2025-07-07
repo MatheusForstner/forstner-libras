@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./avatar-module.css";
 
-export const Avatar = ({ name, imageSrc }) => (
+const Avatar = ({ name, imageSrc }) => (
   <div className="avatar-wrapper">
     <Image
       src={imageSrc}
@@ -13,3 +13,5 @@ export const Avatar = ({ name, imageSrc }) => (
     <span className="author-name">@{name}</span>
   </div>
 );
+
+export default Avatar;
