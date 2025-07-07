@@ -70,7 +70,8 @@ export default function Sinais() {
           </div>
 
           <div className="filtros-container">
-            <div className="botoes-filtros">
+            
+            <div className="botoes-filtros"   style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
               <button onClick={() => setLetraAtiva("")}>Todos</button>
               {alfabeto.map((letra) => (
                 <button
