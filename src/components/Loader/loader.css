@@ -1,41 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 .loader {
-  --size: 52px;
+  --size: clamp(32px, 8vw, 64px);
   position: fixed;
   inset: 0;
   background: #121212;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: clamp(12px, 4vw, 24px);
   z-index: 9999;
   font-family: 'Poppins', sans-serif;
   color: white;
   font-weight: 700;
-  font-size: 2.6rem;
-  letter-spacing: 0.15em;
+  font-size: clamp(1.2rem, 6vw, 2.6rem);
+  letter-spacing: 0.1em;
   animation: fadeIn 0.6s ease forwards;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 1rem;
 }
 
-/* Text slide-in from left */
+/* Texto animado */
 .loader__text {
   animation: slideInLeft 1s ease forwards;
+  max-width: 100%;
+  word-break: break-word;
 }
 
-/* SVG book icon animation like plane in original */
+/* Ícone (ex: SVG de livro) */
 .loader__icon {
   width: var(--size);
   height: var(--size);
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: draw 2.5s forwards ease-in-out, float 3s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
-/* Animations */
+/* Animações */
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideInLeft {
@@ -61,5 +67,13 @@
   }
   50% {
     transform: translateY(-8px);
+  }
+}
+
+/* Responsivo: ajuste extra para telas menores */
+@media (max-width: 480px) {
+  .loader {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
