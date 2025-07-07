@@ -2,9 +2,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Header } from "@/components/Header/header";
-import { Footer } from "@/components/Footer/footer";
-import Loader from "@/components/Loader/loader";
+import { Header } from "../components/Header/header";
+import { Footer } from "../components/Footer/footer";
+import Loader from "../components/Loader/loader";
 
 
 export default function ClientLayout({ children }) {
