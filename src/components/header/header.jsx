@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import "./header.css";
 
-export const Header = () => {
+const Header = () => {
   const [isDark, setIsDark] = useState(false);
   const [horaAtual, setHoraAtual] = useState("00:00");
   const [showMenu, setShowMenu] = useState(false);
@@ -84,3 +84,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;
