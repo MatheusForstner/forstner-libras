@@ -7,7 +7,6 @@ import Footer from "../components/Footer/footer";
 import Loader from "../components/Loader/loader";
 
 
-
 export default function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
 
