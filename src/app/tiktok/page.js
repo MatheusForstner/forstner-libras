@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import dados from "../../db.json";
 
+console.log("CardPost is", CardPost);
+
 export default function Home() {
   const searchParams = useSearchParams();
   const router = useRouter();
