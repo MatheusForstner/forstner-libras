@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Avatar } from "../Avatar";
 import "./cardpost-module.css";
 
-export const CardPost = ({ post }) => {
+const CardPost = ({ post }) => {
   const videoId = post.url.split("/").pop();
 
   return (
@@ -57,3 +57,5 @@ export const CardPost = ({ post }) => {
     </div>
   );
 };
+
+export default CardPost;
