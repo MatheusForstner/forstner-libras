@@ -70,8 +70,10 @@ export default function Sinais() {
           </div>
 
           <div className="filtros-container">
-            
-            <div className="botoes-filtros"   style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+            <div
+              className="botoes-filtros"
+              style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
+            >
               <button onClick={() => setLetraAtiva("")}>Todos</button>
               {alfabeto.map((letra) => (
                 <button
@@ -103,7 +105,9 @@ export default function Sinais() {
               </div>
             ))}
             {filtrados.length === 0 && (
-              <p style={{ textAlign: "center", marginTop: "40px", opacity: 0.7 }}>
+              <p
+                style={{ textAlign: "center", marginTop: "40px", opacity: 0.7 }}
+              >
                 Nenhum sinal encontrado.
               </p>
             )}
@@ -125,33 +129,32 @@ export default function Sinais() {
           <div className="info-section">
             <h2>{selecionado.nome}</h2>
             <ul>
-<li>
-  <strong>Mão</strong>
-  {selecionado.mao ? (
-    <img
-      src={selecionado.mao}
-      alt="Imagem da mão"
-      style={{ maxWidth: "120px", borderRadius: "8px", marginTop: "8px" }}
-    />
-  ) : (
-    "—"
-  )}
-</li>
+              <li>
+                <strong>Mão</strong>
+                {selecionado.mao ? (
+                  <img
+                    src={selecionado.mao}
+                    alt="Imagem da mão"
+                    style={{
+                      maxWidth: "120px",
+                      borderRadius: "8px",
+                      marginTop: "8px",
+                    }}
+                  />
+                ) : (
+                  "—"
+                )}
+              </li>
 
               <li>
                 <strong>Assunto</strong>
                 {selecionado.assunto || "—"}
               </li>
-            
             </ul>
           </div>
 
           <div className="video-section">
-            <video
-              src={selecionado.video}
-              controls
-              poster={selecionado.capa}
-            />
+            <video src={selecionado.video} controls poster={selecionado.capa} />
             {selecionado.imagem && (
               <img
                 src={selecionado.imagem}
