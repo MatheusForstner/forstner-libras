@@ -7,26 +7,50 @@ const slides = [
     title: "Matheus Forstner",
     text: "Desenvolvimento de sistemas e ensino de Libras.",
     image: "/Matheus_Forstner.png",
+    link: "/sobre",
+    label: "Sobre Mim"
   },
   {
     title: "TikTok",
     text: "Tem vários vídeos ensinando sinais em Libras.",
     image: "/tiktok.png",
+    link: "/tiktok",
+    label: "Ver TikTok"
   },
   {
     title: "Diário de Sinais em Libras",
     text: "Encontre aqui seu diário de sinais em Libras.",
     image: "/diario.png",
+    link: "/sinais",
+    label: "Acessar Diário"
   },
   {
     title: "Curso de Sinais em Libras",
     text: "Aproveite para estudar o curso de sinais online.",
-    image: "/curso_de_libras.jpg",
+    image: "/curso_de_libras.png",
+    link: "/cursos",
+    label: "Ver Curso"
   },
 ];
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 9000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    setIsTyping(false);
+    const timeout = setTimeout(() => {
+      setIsTyping(true);
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, [current]);
 
   const goToPrev = () => {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -40,24 +64,7 @@ export default function Home() {
     setCurrent(index);
   };
 
-  const [isTyping, setIsTyping] = useState(true);
-
-  useEffect(() => {
-    setIsTyping(false);
-    const timeout = setTimeout(() => {
-      setIsTyping(true);
-    }, 50); // força reiniciar animação
-    return () => clearTimeout(timeout);
-  }, [current]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 9000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const { title, text, image } = slides[current];
+  const { title, text, image, link, label } = slides[current];
 
   return (
     <main className="hero-section">
@@ -77,8 +84,8 @@ export default function Home() {
           <h4 className={`typing-effect ${isTyping ? "typing" : ""}`}>
             {text}
           </h4>
-          <a href="#contact" className="btn-contact">
-            Contato me <i className="fa fa-arrow-right"></i>
+          <a href={link} className={`btn-contact contact-${current}`}>
+            {label} <i className="fa fa-arrow-right"></i>
           </a>
         </div>
 
