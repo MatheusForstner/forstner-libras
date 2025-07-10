@@ -54,11 +54,43 @@
   color: #00b894;
 }
 
+/* Ícone do relógio */
+.btn-clock {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  margin-top: 4px;
+  transition: transform 0.2s ease;
+}
+
+.btn-clock:hover {
+  transform: scale(1.2);
+}
+
+.dark .btn-clock {
+  color: #fff;
+}
+
+/* Relógio com sinal de hora */
 .clock-inline {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .clock-label {
@@ -97,16 +129,265 @@
   white-space: nowrap;
 }
 
-.btn-mode {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  border: 1px solid #3a3a3a;
+  border-radius: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  border-radius: 20px;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* === Mini nuvens e lua === */
+.moons-hole {
+  position: absolute;
+  transition: 1s;
+}
+
+.moon-hole {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #555;
+}
+
+.moon-hole:nth-child(1) {
+  height: 4px;
+  width: 4px;
+  top: 20px;
+  left: 12px;
+}
+
+.moon-hole:nth-child(2) {
+  height: 8px;
+  width: 8px;
+  top: 10px;
+  left: 6px;
+}
+
+.moon-hole:nth-child(3) {
+  height: 3px;
+  width: 3px;
+  top: 8px;
+  left: 18px;
+}
+
+input:checked + .slider {
+  background-color: #62cff0;
+}
+
+input:checked + .slider:before {
+  transform: translateX(36px);
+  background-color: orange;
+}
+
+input:checked + .slider .moons-hole {
+  transform: translateX(36px);
+  opacity: 0;
+}
+
+/* === Estrelas === */
+.stars {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  bottom: 0;
+  transition: 1s;
+  transform: translateY(0px);
+}
+
+.star {
+  position: absolute;
+  fill: white;
+  animation: star-twinkle 2s infinite;
+}
+
+.star:nth-child(1) {
+  top: 4px;
+  right: 20px;
+  width: 10px;
+}
+
+.star:nth-child(2) {
+  top: 12px;
+  right: 6px;
+  width: 8px;
+}
+
+.star:nth-child(3) {
+  top: 4px;
+  right: 10px;
+  width: 6px;
+}
+
+.star:nth-child(4) {
+  top: 20px;
+  right: 18px;
+  width: 6px;
+}
+
+.star:nth-child(5) {
+  top: 3px;
+  right: 35px;
+  width: 5px;
+}
+
+input:checked + .slider .stars {
+  transform: translateY(-24px);
+  opacity: 0;
+}
+
+@keyframes star-twinkle {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* === Nuvens brancas e escuras === */
+.clouds,
+.black-clouds {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 18px;
+  transition: 1s;
+  transform: translateX(-36px);
+}
+
+.black-clouds {
+  opacity: 0;
+}
+
+.cloud,
+.black-cloud {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: cloud-move 6s infinite;
+}
+
+.cloud {
+  background-color: white;
+}
+
+.black-cloud {
+  background-color: #555;
+  opacity: 0.6;
+}
+
+input:checked + .slider .black-clouds {
+  transform: translateX(24px);
+  opacity: 1;
+}
+
+input:checked + .slider .clouds {
+  transform: translateX(24px);
+}
+
+.cloud:nth-child(1) {
+  top: 0;
+  right: 10px;
+}
+.cloud:nth-child(2) {
+  top: 10px;
+  right: 4px;
+}
+.cloud:nth-child(3) {
+  top: 20px;
+  left: 2px;
+}
+.cloud:nth-child(4) {
+  top: 22px;
+  left: 12px;
+}
+.cloud:nth-child(5) {
+  top: 24px;
+  left: 20px;
+}
+.cloud:nth-child(6) {
+  top: 22px;
+  left: 28px;
+}
+.cloud:nth-child(7) {
+  top: 25px;
+  left: 35px;
+}
+
+.black-cloud:nth-child(1) {
+  top: 1px;
+  right: 2px;
+}
+.black-cloud:nth-child(2) {
+  top: 10px;
+  left: 4px;
+}
+.black-cloud:nth-child(3) {
+  top: 16px;
+  left: 18px;
+}
+
+@keyframes cloud-move {
+  0% {
+    transform: translateX(-24px);
+  }
+  40% {
+    transform: translateX(-28px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(-24px);
+  }
+}
+
+.btn-clock svg {
   transition: transform 0.3s ease;
 }
 
-.btn-mode:hover {
-  transform: rotate(20deg);
+.btn-clock:hover svg {
+  transform: scale(1.2);
+  color: var(--cor-secundaria);
 }
 
 .user-info {
