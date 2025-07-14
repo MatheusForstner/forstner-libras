@@ -3,12 +3,10 @@
 ========================== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* desktop: 4 colunas fixas */
   gap: 24px;
   padding: 24px;
 }
-
-
 
 /* ==========================
    🔗 LINKS (CONTAINER)
@@ -64,23 +62,11 @@
 }
 
 /* ==========================
-   📱 RESPONSIVO
+   📱 RESPONSIVO MOBILE
 ========================== */
-@media (max-width: 768px) {
-  .grid {
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .link {
-    padding: 10px 18px;
-    font-size: 0.9rem;
-  }
-}
-
 @media (max-width: 480px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 coluna só no mobile */
     gap: 16px;
     padding: 16px;
   }
