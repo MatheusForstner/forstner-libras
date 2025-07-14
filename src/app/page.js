@@ -7,8 +7,8 @@ const slides = [
     title: "Matheus Forstner",
     text: "Desenvolvimento de sistemas e ensino de Libras.",
     image: "/Matheus_Forstner.png",
-    link: "/sobre",
-    label: "Sobre Mim"
+    link: "/contato",
+    label: "Contato me"
   },
   {
     title: "TikTok",
