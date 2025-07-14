@@ -70,23 +70,19 @@ export default function Sinais() {
           </div>
 
           <div className="filtros-container">
-            <div
-              className="botoes-filtros"
-              style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
-            >
-              <button onClick={() => setLetraAtiva("")}>Todos</button>
+            <div className="botoes-filtros">
+              <button
+                onClick={() => setLetraAtiva("")}
+                className={letraAtiva === "" ? "ativo" : ""}
+              >
+                Todos
+              </button>
               {alfabeto.map((letra) => (
                 <button
                   key={letra}
                   className={letra === letraAtiva ? "ativo" : ""}
                   onClick={() => setLetraAtiva(letra)}
                   disabled={!letrasDisponiveis[letra]}
-                  style={{
-                    opacity: letrasDisponiveis[letra] ? 1 : 0.3,
-                    cursor: letrasDisponiveis[letra]
-                      ? "pointer"
-                      : "not-allowed",
-                  }}
                 >
                   {letra}
                 </button>
