@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 :root {
   --bg-color: #f5f5f5;
   --text-color: #111;
@@ -16,7 +15,7 @@
   --bg-color: #121314;
   --text-color: #fff;
   --header-bg: linear-gradient(145deg, #1e2225, #0f1112);
-  --link-color: #81FE88;
+  --link-color: #81fe88;
 }
 
 body {
@@ -42,5 +41,3 @@ body {
   background: var(--header-bg);
   transition: background 0.3s ease;
 }
-
-
