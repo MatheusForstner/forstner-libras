@@ -1,4 +1,3 @@
-
 .contato-container {
   display: flex;
   justify-content: center;
@@ -63,14 +62,29 @@
   animation: float 2s ease-in-out infinite;
 }
 
-#star1, #star2, #star3, #star4, #star5, #star6 {
+#star1,
+#star2,
+#star3,
+#star4,
+#star5,
+#star6 {
   animation: blink 1s ease-in-out infinite;
 }
-#star2 { animation-delay: 100ms; }
-#star3 { animation-delay: 500ms; }
-#star4 { animation-delay: 700ms; }
-#star5 { animation-delay: 300ms; }
-#star6 { animation-delay: 200ms }
+#star2 {
+  animation-delay: 100ms;
+}
+#star3 {
+  animation-delay: 500ms;
+}
+#star4 {
+  animation-delay: 700ms;
+}
+#star5 {
+  animation-delay: 300ms;
+}
+#star6 {
+  animation-delay: 200ms;
+}
 
 @keyframes float {
   0% {
@@ -89,7 +103,7 @@
     opacity: 0;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -97,7 +111,7 @@
 }
 
 @media (max-width: 480px) {
-  .svg-contato{
+  .svg-contato {
     height: 200px;
   }
 }
